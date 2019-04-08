@@ -1,33 +1,98 @@
 .App {
-  text-align: center;
+  background-color: #fafafa;
+  overflow: hidden;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+.jumbotron {
+  background-color: #fafafa !important;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  grid-gap: 2rem;
 }
 
-.App-link {
-  color: #61dafb;
+
+.gallery-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 400ms ease-out;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.gallery-image:hover {
+  transform: scale(1.15);
+}
+
+.profileImg {
+  border-radius: 50%;
+}
+
+.interest {
+  font-size: 2rem;
+}
+
+#inputFile {
+  visibility: hidden;
+}
+
+@media (max-width: 570px) {
+  /* for mobile phones portrait mode */
+  .gallery {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-gap: 5px;
   }
-  to {
-    transform: rotate(360deg);
+  .profileImg {
+    height: 15vh;
+    width: auto;
+  }
+  .name {
+    font-size: 1.35rem;
+    font-weight: 400;
+  }
+  .lead {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 571px) and (max-width: 760px) {
+  /* for mobile phones landscape mode */
+  .gallery {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-gap: 10px;
+  }
+  .profileImg {
+    height: 45vmin;
+  }
+  .name {
+    font-size: 2.5rem;
+    font-weight: 400;
+  }
+}
+
+@media (min-width: 761px) and (max-width: 991px) {
+  /* for tablets mode */
+  .gallery {
+    grid-template-columns: repeat(auto-fit, minmax(175px, 1fr));
+    grid-gap: 1.25rem;
+  }
+  .name {
+    font-size: 3rem;
+    font-weight: 400;
+  }
+  .lead {
+    font-size: 1.5rem;
+  }
+}
+
+@media (min-width: 993px) and (max-width: 1199px) {
+  .gallery {
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    grid-gap: 1.5rem;
+  }
+  .interest {
+    font-size: 1.75rem;
   }
 }
